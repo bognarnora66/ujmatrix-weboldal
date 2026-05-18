@@ -1,13 +1,13 @@
-/* ── BETŰTÍPUS BEÁGYAZÁSA (Elegáns, prémium hatás) ── */
+/* ── BETŰTÍPUS BEÁGYAZÁSA ── */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
 
 :root {
-  --bg-creme: #fdfbf7;       /* Az a gyönyörű lágy bézs háttér */
-  --bg-card: #ffffff;        /* Tiszta fehér a kártyáknak */
-  --gold-accent: #b89775;    /* Elegáns aranybarna a gomboknak és kiemeléseknek */
-  --gold-hover: #a38260;     /* Sötétebb aranybarna az egér ráhúzásakor */
-  --text-dark: #3a3530;      /* Puha, meleg sötétbarna a rideg fekete helyett */
-  --text-muted: #7c756e;     /* Finom másodlagos szövegszín */
+  --bg-creme: #fdfbf7;       
+  --bg-card: #ffffff;        
+  --gold-accent: #b89775;    
+  --gold-hover: #a38260;     
+  --text-dark: #3a3530;      
+  --text-muted: #7c756e;     
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Montserrat', sans-serif;
 }
@@ -26,7 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── NAVIGÁCIÓ (Letisztult, áttetsző) ── */
+/* ── NAVIGÁCIÓ ── */
 nav {
   position: fixed;
   top: 0;
@@ -62,34 +62,25 @@ nav {
   font-size: 0.9rem;
   font-weight: 400;
   letter-spacing: 1px;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: var(--gold-accent);
 }
 
 .nav-cta {
   background: var(--gold-accent) !important;
-  color: var(--white) !important;
-  padding: 10px 22px;
-  border-radius: 50px; /* Lekerekített gomb, mint a mintán */
-  font-weight: 500;
-  transition: background 0.3s !important;
-}
-
-.nav-cta:hover {
-  background: var(--gold-hover) !important;
   color: #ffffff !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 500;
 }
 
-/* ── HERO (FŐKÉP SECTION) ── */
+/* ── HERO SECTION (Középre igazítva és 15%-al világosítva) ── */
 .hero {
   position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 80px;
+  justify-content: center; /* Vízszintesen középre */
+  text-align: center;      /* Szöveg középre igazítása */
+  padding: 0 20px;
   color: #ffffff;
 }
 
@@ -99,71 +90,83 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Itt pontosan a GitHubos hero-bg.png-re hivatkozunk: */
-  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('hero-bg.png') no-repeat center center/cover;
+  /* Világosítottunk a háttéren: 0.35 helyett 0.2 lett a sötétítés értéke */
+  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('hero-bg.png') no-repeat center center/cover;
   z-index: -1;
 }
 
 .hero-content {
-  max-width: 650px;
+  max-width: 750px;
+}
+
+.hero-tagline {
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-content h1 {
   font-family: var(--font-serif);
-  font-size: 4rem;
+  font-size: 4.2rem;
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 25px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  text-shadow: 0 2px 15px rgba(0,0,0,0.3);
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 300;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
   letter-spacing: 0.5px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center; /* Gombok középre igazítása */
+  gap: 20px;
 }
 
 .btn-primary {
   display: inline-block;
   background: var(--gold-accent);
-  color: #ffffff;
+  color: #ffffff !important;
   padding: 14px 35px;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 500;
   letter-spacing: 1px;
-  transition: background 0.3s, transform 0.2s;
   box-shadow: 0 4px 15px rgba(184, 151, 117, 0.3);
+  transition: background 0.3s;
 }
 
 .btn-primary:hover {
   background: var(--gold-hover);
-  transform: translateY(-2px);
 }
 
 .btn-ghost {
   display: inline-block;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.7);
   padding: 14px 35px;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 500;
   letter-spacing: 1px;
   transition: all 0.3s;
-  margin-left: 15px;
 }
 
 .btn-ghost:hover {
   background: #ffffff;
-  color: var(--text-dark);
-  border-color: #ffffff;
+  color: var(--text-dark) !important;
 }
 
-/* ── PROBLÉMÁK SECTION (Bézs háttérrel) ── */
+/* ── PROBLÉMÁK SECTION ── */
 .problems {
-  padding: 100px 60px;
+  padding: 100px 40px;
   text-align: center;
   background-color: var(--bg-creme);
 }
@@ -173,47 +176,51 @@ nav {
   font-size: 2.8rem;
   font-weight: 400;
   margin-bottom: 50px;
-  position: relative;
-}
-
-.problems h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 1px;
-  background: var(--gold-accent);
-  margin: 15px auto 0 auto;
 }
 
 .problems-grid {
   display: flex;
-  gap: 40px;
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .problem-card {
   background: var(--bg-card);
-  padding: 45px 35px;
-  border-radius: 16px; /* Szép kerekített sarkok */
+  padding: 45px 30px;
+  border-radius: 16px;
   flex: 1;
-  box-shadow: 0 10px 30px rgba(184, 151, 117, 0.05);
-  transition: transform 0.3s;
+  box-shadow: 0 10px 30px rgba(184, 151, 117, 0.04);
   border: 1px solid rgba(184, 151, 117, 0.05);
-}
-
-.problem-card:hover {
-  transform: translateY(-5px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .problem-card h3 {
   font-family: var(--font-serif);
   font-size: 1.6rem;
   margin-bottom: 15px;
-  color: var(--gold-accent);
+  color: var(--text-dark);
 }
 
-/* ── MÓDSZER SECTION (Papírhajó elrendezés) ── */
+.problem-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+/* Kártyák alatti arany gombok javítása */
+.problem-card .btn-primary {
+  width: 100%;
+  max-width: 200px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  box-shadow: none;
+}
+
+/* ── MÓDSZER SECTION ── */
 .method {
   display: flex;
   min-height: 600px;
@@ -236,13 +243,7 @@ nav {
 .method-text h2 {
   font-family: var(--font-serif);
   font-size: 2.8rem;
-  font-weight: 400;
   margin-bottom: 25px;
-}
-
-.method-text p {
-  color: var(--text-muted);
-  margin-bottom: 20px;
 }
 
 /* ── VIDEÓ SECTION ── */
@@ -252,22 +253,16 @@ nav {
   background-color: var(--bg-creme);
 }
 
-.video-section h2 {
-  font-family: var(--font-serif);
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-}
-
 .video-wrapper {
   max-width: 850px;
   margin: 0 auto;
   aspect-ratio: 16/9;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-/* ── LÁBLÉC (A hangulatos esti kép háttérrel) ── */
+/* ── LÁBLÉC ── */
 footer {
   position: relative;
   background: linear-gradient(rgba(58, 53, 48, 0.8), rgba(58, 53, 48, 0.85)), url('footer-bg.jpg') no-repeat center center/cover;
@@ -280,31 +275,13 @@ footer {
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto 60px auto;
-  gap: 50px;
-}
-
-.footer-brand {
-  max-width: 400px;
-}
-
-.footer-brand .nav-logo-text {
-  color: #ffffff;
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-}
-
-.footer-brand p {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.95rem;
 }
 
 .footer-col h4 {
   font-family: var(--font-serif);
   font-size: 1.3rem;
-  font-weight: 400;
   margin-bottom: 20px;
   color: var(--gold-accent);
-  letter-spacing: 1px;
 }
 
 .footer-col ul {
@@ -318,19 +295,6 @@ footer {
 .footer-col a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
-  font-size: 0.95rem;
-  transition: color 0.3s;
-}
-
-.footer-col a:hover {
-  color: var(--gold-accent);
-}
-
-.footer-col address {
-  font-style: normal;
-  font-size: 0.95rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-bottom {
@@ -343,22 +307,10 @@ footer {
   margin: 0 auto;
 }
 
-.footer-bottom span {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.5);
-}
-
 .messenger-btn {
   background: #0084ff;
   color: #ffffff !important;
   padding: 10px 24px;
   text-decoration: none;
   border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.messenger-btn:hover {
-  background: #006bde;
 }

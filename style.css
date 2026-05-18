@@ -1,465 +1,259 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+/* ── ALAPBEÁLLÍTÁSOK & SZÍNEK ── */
 :root {
-  --cream: #f5f0e8;
-  --warm-white: #faf8f4;
-  --sage: #8a9e8a;
-  --deep-sage: #4a6741;
-  --mist: #c8d4c8;
-  --charcoal: #2c2c2a;
-  --soft-brown: #7a6a58;
-  --accent: #b5a090;
-  --text: #3a3530;
-  --text-muted: #7a7268;
+  --deep-sage: #4a6b5d;
+  --light-sage: #f2f5f3;
+  --text-dark: #2d3732;
+  --text-muted: #616e67;
+  --white: #ffffff;
 }
 
-html { scroll-behavior: smooth; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Jost', sans-serif;
-  background: var(--warm-white);
-  color: var(--text);
-  font-weight: 300;
-  line-height: 1.7;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-dark);
+  line-height: 1.6;
+  background: var(--white);
 }
 
-/* ── NAV ── */
+/* ── NAVIGÁCIÓ ── */
 nav {
   position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
+  top: 0;
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1.2rem 4rem;
-  background: rgba(250, 248, 244, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid rgba(138, 158, 138, 0.2);
-  transition: padding 0.3s;
-}
-
-nav.scrolled { padding: 0.8rem 4rem; }
-
-.nav-logo {
-  display: flex;
   align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: var(--charcoal);
+  padding: 20px 40px;
+  z-index: 1000;
+  transition: background 0.3s;
 }
 
-.nav-logo img { height: 36px; width: auto; }
+nav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
 
 .nav-logo-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--deep-sage);
 }
 
 .nav-links {
   display: flex;
-  gap: 2rem;
   list-style: none;
+  gap: 20px;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.25s;
+  color: var(--text-dark);
+  font-size: 0.95rem;
 }
-
-.nav-links a:hover { color: var(--deep-sage); }
 
 .nav-cta {
   background: var(--deep-sage);
-  color: #fff !important;
-  padding: 0.5rem 1.25rem;
-  border-radius: 2px;
+  color: var(--white) !important;
+  padding: 8px 16px;
+  border-radius: 4px;
 }
 
-.nav-cta:hover { background: var(--sage); color: #fff !important; }
-
-.nav-phone {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-}
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
-}
-
-.hamburger span {
-  display: block;
-  width: 22px;
-  height: 1.5px;
-  background: var(--charcoal);
-  transition: 0.3s;
-}
-
-/* ── HERO ── */
+/* ── HERO (FŐKÉP) SECTION ── */
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 600px;
   display: flex;
   align-items: center;
-  overflow: hidden;
+  padding: 0 40px;
+  color: var(--white);
 }
 
 .hero-bg {
   position: absolute;
-  inset: 0;
-  background-image: url('assets/banner3-7WYAkbLT.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: brightness(0.55);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('fooldal-fokep.png') no-repeat center center/cover;
+  z-index: -1;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 0 4rem;
-  max-width: 680px;
+  max-width: 600px;
 }
 
-.hero-tag {
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mist);
-  margin-bottom: 1.5rem;
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin: 15px 0;
 }
-
-.hero h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  font-weight: 300;
-  line-height: 1.15;
-  color: #f5f0e8;
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: var(--mist);
-}
-
-.hero p {
-  font-size: 1rem;
-  color: rgba(245, 240, 232, 0.85);
-  max-width: 420px;
-  margin-bottom: 2.5rem;
-  line-height: 1.8;
-}
-
-.btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 .btn-primary {
   display: inline-block;
   background: var(--deep-sage);
-  color: #fff;
+  color: var(--white);
+  padding: 12px 28px;
   text-decoration: none;
-  padding: 0.85rem 2rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  transition: background 0.3s;
+  border-radius: 4px;
+  margin-right: 15px;
 }
-
-.btn-primary:hover { background: var(--sage); }
 
 .btn-ghost {
   display: inline-block;
-  border: 1px solid rgba(245, 240, 232, 0.5);
-  color: var(--cream);
+  color: var(--white);
+  border: 1px solid var(--white);
+  padding: 12px 28px;
   text-decoration: none;
-  padding: 0.85rem 2rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  transition: all 0.3s;
+  border-radius: 4px;
 }
 
-.btn-ghost:hover {
-  border-color: var(--cream);
-  background: rgba(245,240,232,0.1);
-}
-
-/* ── SECTION BASE ── */
-section { padding: 6rem 4rem; }
-
-.section-label {
-  font-size: 0.7rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 1rem;
-}
-
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  line-height: 1.2;
-  color: var(--charcoal);
-  margin-bottom: 1.5rem;
-}
-
-/* ── PROBLEMS ── */
+/* ── PROBLÉMÁK SECTION ── */
 .problems {
-  background: var(--cream);
+  padding: 80px 40px;
   text-align: center;
-}
-
-.problems .section-intro {
-  max-width: 480px;
-  margin: 0 auto 4rem;
+  background: var(--light-sage);
 }
 
 .problems-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  max-width: 900px;
-  margin: 0 auto 3rem;
+  display: flex;
+  gap: 30px;
+  margin: 40px 0;
 }
 
 .problem-card {
-  background: var(--warm-white);
-  padding: 2.5rem 2rem;
-  border-radius: 4px;
-  border: 1px solid rgba(138, 158, 138, 0.25);
-  text-align: left;
+  background: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  flex: 1;
 }
 
-.problem-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--charcoal);
-  margin-bottom: 0.75rem;
-}
-
-.problem-card p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  line-height: 1.8;
-}
-
-.problem-icon {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--sage);
-}
-
-/* ── METHOD ── */
+/* ── MÓDSZER SECTION ── */
 .method {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  padding: 0;
-  min-height: 540px;
+  display: flex;
+  min-height: 500px;
 }
 
 .method-img {
-  background-image: url('assets/content3-WQ73wlVp.jpg');
-  background-size: cover;
-  background-position: center;
-  min-height: 400px;
+  flex: 1;
+  background: url('papirhajo.jpg') no-repeat center center/cover;
 }
 
 .method-text {
-  background: var(--charcoal);
-  padding: 5rem 4rem;
+  flex: 1;
+  padding: 80px 40px;
+  background: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.method-text .section-label { color: var(--mist); }
-
-.method-text .section-title { color: var(--cream); }
-
-.method-text p {
-  color: rgba(245, 240, 232, 0.75);
-  line-height: 1.9;
-  margin-bottom: 2rem;
-  font-size: 0.95rem;
-}
-
-.btn-light {
-  display: inline-block;
-  border: 1px solid rgba(245,240,232,0.4);
-  color: var(--cream);
-  text-decoration: none;
-  padding: 0.75rem 1.75rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: 2px;
-  transition: all 0.3s;
-  align-self: flex-start;
-}
-
-.btn-light:hover {
-  border-color: var(--cream);
-  background: rgba(245,240,232,0.1);
-}
-
-/* ── VIDEO ── */
+/* ── VIDEÓ SECTION ── */
 .video-section {
-  background: var(--cream);
+  padding: 80px 40px;
   text-align: center;
 }
 
 .video-wrapper {
-  position: relative;
-  max-width: 780px;
-  margin: 2rem auto 0;
-  border-radius: 4px;
-  overflow: hidden;
+  max-width: 800px;
+  margin: 30px auto 0;
   aspect-ratio: 16/9;
-  background: var(--charcoal);
 }
 
-.video-wrapper iframe {
-  position: absolute;
-  inset: 0;
+iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
 
-/* ── FOOTER ── */
+/* ── LÁBLÉC (A KÉP ÉS AZ INFORMÁCIÓK) ── */
 footer {
-  background: var(--charcoal);
-  color: rgba(245, 240, 232, 0.7);
-  padding: 4rem;
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('footer-bg.jpg') no-repeat center center/cover;
+  color: var(--white);
+  padding: 60px 40px 20px;
+  text-align: center;
 }
 
 .footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.footer-brand {
+  text-align: center;
+  max-width: 500px;
 }
 
 .footer-brand .nav-logo-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.4rem;
-  color: var(--cream);
-  display: block;
-  margin-bottom: 1rem;
+  color: var(--white);
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
-.footer-brand p {
-  font-size: 0.85rem;
-  line-height: 1.8;
-  max-width: 280px;
+.footer-col {
+  text-align: center;
 }
 
 .footer-col h4 {
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mist);
-  margin-bottom: 1.25rem;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
 }
 
-.footer-col ul { list-style: none; }
-
-.footer-col ul li { margin-bottom: 0.6rem; }
-
-.footer-col ul a {
-  text-decoration: none;
-  color: rgba(245, 240, 232, 0.6);
-  font-size: 0.875rem;
-  transition: color 0.2s;
-}
-
-.footer-col ul a:hover { color: var(--cream); }
-
-.footer-col address {
-  font-style: normal;
-  font-size: 0.875rem;
-  line-height: 1.9;
+.footer-col ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
 .footer-col a {
-  color: rgba(245, 240, 232, 0.6);
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
+  font-size: 0.95rem;
 }
 
-.footer-col a:hover { color: var(--cream); }
+.footer-col address {
+  font-style: normal;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-col address a {
+  display: block;
+}
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.8rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-bottom span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .messenger-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #0084FF;
-  color: #fff;
+  display: inline-block;
+  background: #0084ff;
+  color: var(--white);
+  padding: 8px 16px;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  transition: background 0.2s;
-}
-
-.messenger-btn:hover { background: #006acc; }
-
-/* ── MOBILE ── */
-@media (max-width: 768px) {
-  nav { padding: 1rem 1.5rem; }
-  nav.scrolled { padding: 0.7rem 1.5rem; }
-
-  .nav-links, .nav-phone { display: none; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 60px; left: 0; right: 0;
-    background: var(--warm-white);
-    padding: 2rem;
-    border-bottom: 1px solid var(--mist);
-    gap: 1.2rem;
-    z-index: 99;
-  }
-
-  .hamburger { display: flex; }
-
-  .hero { height: auto; min-height: 100svh; padding-top: 5rem; padding-bottom: 4rem; }
-  .hero-content { padding: 0 1.5rem; }
-
-  section { padding: 4rem 1.5rem; }
-
-  .method { grid-template-columns: 1fr; }
-  .method-img { min-height: 260px; }
-  .method-text { padding: 3rem 1.5rem; }
-
-  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  footer { padding: 3rem 1.5rem; }
-  .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  border-radius: 4px;
+  font-size: 0.9rem;
 }

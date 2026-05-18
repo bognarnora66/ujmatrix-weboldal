@@ -1,10 +1,15 @@
-/* ── ALAPBEÁLLÍTÁSOK & SZÍNEK ── */
+/* ── BETŰTÍPUS BEÁGYAZÁSA (Elegáns, prémium hatás) ── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap');
+
 :root {
-  --deep-sage: #4a6b5d;
-  --light-sage: #f2f5f3;
-  --text-dark: #2d3732;
-  --text-muted: #616e67;
-  --white: #ffffff;
+  --bg-creme: #fdfbf7;       /* Az a gyönyörű lágy bézs háttér */
+  --bg-card: #ffffff;        /* Tiszta fehér a kártyáknak */
+  --gold-accent: #b89775;    /* Elegáns aranybarna a gomboknak és kiemeléseknek */
+  --gold-hover: #a38260;     /* Sötétebb aranybarna az egér ráhúzásakor */
+  --text-dark: #3a3530;      /* Puha, meleg sötétbarna a rideg fekete helyett */
+  --text-muted: #7c756e;     /* Finom másodlagos szövegszín */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', sans-serif;
 }
 
 * {
@@ -14,13 +19,14 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--font-sans);
   color: var(--text-dark);
-  line-height: 1.6;
-  background: var(--white);
+  background-color: var(--bg-creme);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ── NAVIGÁCIÓ ── */
+/* ── NAVIGÁCIÓ (Letisztult, áttetsző) ── */
 nav {
   position: fixed;
   top: 0;
@@ -28,49 +34,63 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 25px 50px;
   z-index: 1000;
-  transition: background 0.3s;
-}
-
-nav.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  background: rgba(253, 251, 247, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(184, 151, 117, 0.1);
 }
 
 .nav-logo-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--deep-sage);
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 1px;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 20px;
+  gap: 30px;
+  align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-dark);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold-accent);
 }
 
 .nav-cta {
-  background: var(--deep-sage);
+  background: var(--gold-accent) !important;
   color: var(--white) !important;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 10px 22px;
+  border-radius: 50px; /* Lekerekített gomb, mint a mintán */
+  font-weight: 500;
+  transition: background 0.3s !important;
 }
 
-/* ── HERO (FŐKÉP) SECTION ── */
+.nav-cta:hover {
+  background: var(--gold-hover) !important;
+  color: #ffffff !important;
+}
+
+/* ── HERO (FŐKÉP SECTION) ── */
 .hero {
   position: relative;
   height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0 40px;
-  color: var(--white);
+  padding: 0 80px;
+  color: #ffffff;
 }
 
 .hero-bg {
@@ -79,62 +99,125 @@ nav.scrolled {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('fooldal-fokep.png') no-repeat center center/cover;
+  /* Itt pontosan a GitHubos hero-bg.png-re hivatkozunk: */
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('hero-bg.png') no-repeat center center/cover;
   z-index: -1;
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
-  margin: 15px 0;
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 35px;
+  letter-spacing: 0.5px;
 }
 
 .btn-primary {
   display: inline-block;
-  background: var(--deep-sage);
-  color: var(--white);
-  padding: 12px 28px;
+  background: var(--gold-accent);
+  color: #ffffff;
+  padding: 14px 35px;
   text-decoration: none;
-  border-radius: 4px;
-  margin-right: 15px;
+  border-radius: 50px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 15px rgba(184, 151, 117, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--gold-hover);
+  transform: translateY(-2px);
 }
 
 .btn-ghost {
   display: inline-block;
-  color: var(--white);
-  border: 1px solid var(--white);
-  padding: 12px 28px;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 14px 35px;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 50px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  margin-left: 15px;
 }
 
-/* ── PROBLÉMÁK SECTION ── */
+.btn-ghost:hover {
+  background: #ffffff;
+  color: var(--text-dark);
+  border-color: #ffffff;
+}
+
+/* ── PROBLÉMÁK SECTION (Bézs háttérrel) ── */
 .problems {
-  padding: 80px 40px;
+  padding: 100px 60px;
   text-align: center;
-  background: var(--light-sage);
+  background-color: var(--bg-creme);
+}
+
+.problems h2 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.problems h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: var(--gold-accent);
+  margin: 15px auto 0 auto;
 }
 
 .problems-grid {
   display: flex;
-  gap: 30px;
-  margin: 40px 0;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .problem-card {
-  background: var(--white);
-  padding: 30px;
-  border-radius: 8px;
+  background: var(--bg-card);
+  padding: 45px 35px;
+  border-radius: 16px; /* Szép kerekített sarkok */
   flex: 1;
+  box-shadow: 0 10px 30px rgba(184, 151, 117, 0.05);
+  transition: transform 0.3s;
+  border: 1px solid rgba(184, 151, 117, 0.05);
 }
 
-/* ── MÓDSZER SECTION ── */
+.problem-card:hover {
+  transform: translateY(-5px);
+}
+
+.problem-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: var(--gold-accent);
+}
+
+/* ── MÓDSZER SECTION (Papírhajó elrendezés) ── */
 .method {
   display: flex;
-  min-height: 500px;
+  min-height: 600px;
+  background: var(--bg-card);
 }
 
 .method-img {
@@ -144,82 +227,103 @@ nav.scrolled {
 
 .method-text {
   flex: 1;
-  padding: 80px 40px;
-  background: var(--white);
+  padding: 100px 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.method-text h2 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+.method-text p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
 }
 
 /* ── VIDEÓ SECTION ── */
 .video-section {
-  padding: 80px 40px;
+  padding: 100px 40px;
   text-align: center;
+  background-color: var(--bg-creme);
+}
+
+.video-section h2 {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  margin-bottom: 40px;
 }
 
 .video-wrapper {
-  max-width: 800px;
-  margin: 30px auto 0;
+  max-width: 850px;
+  margin: 0 auto;
   aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* ── LÁBLÉC (A KÉP ÉS AZ INFORMÁCIÓK) ── */
+/* ── LÁBLÉC (A hangulatos esti kép háttérrel) ── */
 footer {
   position: relative;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('footer-bg.jpg') no-repeat center center/cover;
-  color: var(--white);
-  padding: 60px 40px 20px;
-  text-align: center;
+  background: linear-gradient(rgba(58, 53, 48, 0.8), rgba(58, 53, 48, 0.85)), url('footer-bg.jpg') no-repeat center center/cover;
+  color: #ffffff;
+  padding: 80px 60px 30px;
 }
 
 .footer-grid {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  margin-bottom: 40px;
-  max-width: 800px;
-  margin: 0 auto 40px auto;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  gap: 50px;
 }
 
 .footer-brand {
-  text-align: center;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .footer-brand .nav-logo-text {
-  color: var(--white);
-  font-size: 2rem;
-  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
 }
 
-.footer-col {
-  text-align: center;
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
 }
 
 .footer-col h4 {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: var(--gold-accent);
+  letter-spacing: 1px;
 }
 
 .footer-col ul {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
+}
+
+.footer-col li {
+  margin-bottom: 12px;
 }
 
 .footer-col a {
   color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-col a:hover {
+  color: var(--gold-accent);
 }
 
 .footer-col address {
@@ -229,31 +333,32 @@ footer {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.footer-col address a {
-  display: block;
-}
-
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .footer-bottom span {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .messenger-btn {
-  display: inline-block;
   background: #0084ff;
-  color: var(--white);
-  padding: 8px 16px;
+  color: #ffffff !important;
+  padding: 10px 24px;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 50px;
   font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.messenger-btn:hover {
+  background: #006bde;
 }

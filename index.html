@@ -10,9 +10,20 @@
 <body>
 
   <nav id="navbar">
+    
     <a href="index.html" class="nav-logo">
-      <span class="nav-logo-text">ÚjMátrix</span>
+      <svg class="logo-svg" viewBox="0 0 160 45" width="160" height="45">
+        <text x="10" y="28" class="logo-text">ÚjMátrix</text>
+        <path class="line" d="M 10 38 L 140 38" stroke="#d6b28d" stroke-width="2" fill="none" />
+      </svg>
     </a>
+
+    <div class="nav-credentials">
+      <span class="nav-name">Bognár Eleonóra</span>
+      <span class="nav-title">Légzésterapeuta</span>
+      <a href="tel:+36302092338" class="nav-phone">+36 30 209 2338</a>
+    </div>
+
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Főoldal</a></li>
       <li><a href="rolam.html">Rólam</a></li>
@@ -140,10 +151,19 @@
   </footer>
 
   <script type="module">
-    import { createLayout, utils } from 'https://esm.sh/animejs';
+    import { createLayout, utils, animate, svg, stagger } from 'https://esm.sh/animejs';
 
+    // 1. AZ UTOLJÁRA KÜLDÖTT LOGÓVONAL-RAJZOLÓ ANIMÁCIÓD
+    animate(svg.createDrawable('.line'), {
+      draw: ['0 0', '0 1', '1 1'],
+      ease: 'inOutQuad',
+      duration: 2500,
+      delay: stagger(100),
+      loop: true
+    });
+
+    // 2. SZOLGÁLTATÁS KÁRTYÁK ANIMÁCIÓJA (FLIP ELEM)
     const buttons = utils.$('.item');
-
     const $dialog = document.createElement('dialog');
     $dialog.id = 'layout-dialog';
     document.body.appendChild($dialog);
@@ -174,7 +194,6 @@
 
       const $clone = $item.cloneNode(true);
       $clone.className = 'modal-card'; 
-      
       $dialog.innerHTML = ''; 
       $dialog.appendChild($clone); 
 

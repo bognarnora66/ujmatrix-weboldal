@@ -140,7 +140,7 @@
     document.body.appendChild($dialog);
 
     const modalLayout = createLayout($dialog, {
-      children: ['.item', 'h3', '.card-meta', 'p', '.full-details', '.more-btn'],
+      children: ['.modal-card', 'h3', '.card-meta', 'p', '.full-details', '.more-btn'],
       properties: ['--overlay-alpha'],
     });
 
@@ -164,6 +164,10 @@
       if (!$item || $item.classList.contains('is-open')) return;
 
       const $clone = $item.cloneNode(true);
+      
+      // Itt a trükk: A klónozott kártyának adunk egy egyedi nevet, hogy a CSS csak ezt formázza felugróként!
+      $clone.className = 'modal-card'; 
+      
       $dialog.innerHTML = ''; 
       $dialog.appendChild($clone); 
 

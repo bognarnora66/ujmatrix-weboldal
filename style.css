@@ -1,5 +1,5 @@
 /* ── BETŰTÍPUS BEÁGYAZÁSA ── */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
   --bg-creme: #fdfbf7;       
@@ -159,7 +159,7 @@ nav {
   transition: all 0.3s;
 }
 
-/* ── SZOLGÁLTATÁSOK RÁCS (ALAPOLDALI STÍLUS) ── */
+/* ── SZOLGÁLTATÁSOK RÁCS ── */
 .problems {
   padding: 100px 40px;
   text-align: center;
@@ -180,7 +180,6 @@ nav {
   margin: 0 auto;
 }
 
-/* A főoldali gomb-kártyák stílusa */
 button.problem-card {
   border: 1px solid rgba(184, 151, 117, 0.15);
   background: var(--bg-card);
@@ -230,7 +229,6 @@ button.problem-card h3 {
   line-height: 1.6;
 }
 
-/* Alapból elrejtjük a teljes leírást a rácsban */
 .problem-card .full-details {
   display: none;
 }
@@ -254,7 +252,7 @@ button.problem-card:hover .more-btn {
   visibility: hidden;
 }
 
-/* ── KINAGYÍTOTT MODAL DIZÁJN (A VÉGLES, JAVÍTOTT SZABÁLYOK) ── */
+/* ── KINAGYÍTOTT MODAL DIZÁJN ── */
 #layout-dialog {
   border: none;
   background: transparent;
@@ -273,12 +271,11 @@ button.problem-card:hover .more-btn {
   backdrop-filter: blur(8px);
 }
 
-/* Kifejezetten CSÖPÖNYI egyedi név a felugró ablak kártyájának */
 .modal-card {
-  background: #fff9f1; /* Halvány meleg beige */
+  background: #fff9f1; 
   padding: 55px 45px;
   border-radius: 24px;
-  border: 1px solid rgba(184, 151, 117, 0.4); /* Elegáns vékony arany keret */
+  border: 1px solid rgba(184, 151, 117, 0.4); 
   box-shadow: 0 30px 70px rgba(58, 53, 48, 0.18);
   text-align: center;
   display: flex;
@@ -297,7 +294,7 @@ button.problem-card:hover .more-btn {
 
 .modal-card .short-desc, 
 .modal-card .more-btn {
-  display: none; /* A felugró ablakban ezek nem kellenek */
+  display: none; 
 }
 
 .modal-card .full-details {
@@ -331,7 +328,7 @@ button.problem-card:hover .more-btn {
   margin: 0 auto;
 }
 
-/* ── MÓDSZER SECTION ── */
+/* ── MÓDSZER SECTION FRISSÍTÉSEK ── */
 .method {
   display: flex;
   min-height: 600px;
@@ -352,23 +349,40 @@ button.problem-card:hover .more-btn {
   justify-content: center;
 }
 
+/* JAVÍTOTT: A MÓDSZER szó nagyobb, vastagabb, sokkal jobban olvasható */
 .method-tagline {
   color: var(--gold-accent);
   font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 3px;
+  font-size: 1.1rem;      /* Megnövelt méret */
+  font-weight: 600;       /* Súlyosabb, vastagabb betű */
+  letter-spacing: 4px;    /* Szellősebb betűközök */
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 25px;    /* Nagyobb térköz alatta */
   display: block;
 }
 
 .method-text h2 {
+  display: flex;
+  flex-direction: column; /* Egymás alá rendezi a két sort */
+  gap: 10px;              /* Távolság a két sor között */
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+/* JAVÍTOTT: Első sor - Transzlégzés arany színben */
+.method-title-gold {
   font-family: var(--font-serif);
-  font-size: 2.5rem;
-  line-height: 1.3;
-  margin-bottom: 25px;
-  color: var(--text-dark);
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: var(--gold-accent); /* Megegyezik a gomb színével */
+}
+
+/* JAVÍTOTT: Második sor - Kisebb betűmérettel, eredeti sötét színnel */
+.method-title-sub {
+  font-family: var(--font-serif);
+  font-size: 1.9rem;      /* Kisebb betűméret */
+  color: var(--text-dark); /* Jelenlegi sötét szín */
+  font-weight: 400;
 }
 
 .method-text p {

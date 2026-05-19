@@ -3,9 +3,7 @@
 
 :root {
   --bg-creme: #fdfbf7;       
-  --bg-card: #ffffff;        
   --gold-accent: #b89775;    
-  --gold-hover: #a38260;     
   --text-dark: #3a3530;      
   --text-muted: #7c756e;     
   --font-serif: 'Cormorant Garamond', Georgia, serif;
@@ -21,7 +19,7 @@ body {
   line-height: 1.7;
 }
 
-/* ── NAVIGÁCIÓ (Logó nélkül) ── */
+/* ── NAVIGÁCIÓ ── */
 nav {
   position: fixed;
   top: 0;
@@ -45,40 +43,27 @@ nav {
 .nav-links a.active { color: var(--gold-accent); font-weight: 600; border-bottom: 2px solid var(--gold-accent); }
 .nav-cta { background: var(--gold-accent); color: white !important; padding: 8px 20px; border-radius: 50px; }
 
-/* ── HERO SECTION ── */
+/* ── HERO SECTION (A kész háttérképpel) ── */
 .hero {
   position: relative;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-left: 80px;
-  color: #ffffff;
+  width: 100%;
+  overflow: hidden;
 }
 
 .hero-bg {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.3)), url('hero-bg.png') no-repeat center center/cover;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: url('hero-bg.jpg') no-repeat center center/cover;
 }
 
-.hero-content { max-width: 600px; }
-.hero-tagline { font-size: 1rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
-h1 { font-family: var(--font-serif); font-size: 4rem; line-height: 1.1; margin-bottom: 20px; }
-.hero-title-gold { color: var(--gold-accent); }
-.hero-desc { font-size: 1.2rem; margin-bottom: 30px; }
-
-/* LOGÓ A SZÖVEG ALATT */
-.hero-logo-box { margin: 30px 0; }
-.hero-logo-box img { width: 250px; height: auto; display: block; }
-
-.hero-buttons { display: flex; gap: 20px; }
-.btn-primary { background: var(--gold-accent); color: white !important; padding: 14px 35px; text-decoration: none; border-radius: 50px; }
-.btn-ghost { color: white !important; border: 1px solid white; padding: 14px 35px; text-decoration: none; border-radius: 50px; }
-
-/* ── SZOLGÁLTATÁSOK RÁCS ── */
+/* ── SZOLGÁLTATÁSOK RÁCS (A MODALHOZ) ── */
 .problems { padding: 100px 40px; text-align: center; background-color: var(--bg-creme); }
 .problems h2 { font-family: var(--font-serif); font-size: 2.8rem; margin-bottom: 50px; }
 .problems-grid { display: flex; gap: 30px; max-width: 1200px; margin: 0 auto; }
-.problem-card { background: white; padding: 40px; border-
+.problem-card { background: white; padding: 40px; border-radius: 16px; border: 1px solid #eee; flex: 1; cursor: pointer; transition: 0.3s; }
+.problem-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+/* ── LÁBLÉC ── */
+footer { background: #3a3530; color: white; padding: 60px 40px; text-align: center; }
+.footer-grid { display: flex; justify-content: space-around; max-width: 1200px; margin: 0 auto; }

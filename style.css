@@ -230,7 +230,6 @@ button.problem-card h3 {
   line-height: 1.6;
 }
 
-/* Alaphelyzetben a részletes leírás el van rejtve */
 .problem-card .full-details {
   display: none;
   opacity: 0;
@@ -250,13 +249,12 @@ button.problem-card:hover .more-btn {
   color: var(--gold-hover);
 }
 
-/* Amikor a kártya nyitva van a háttérben, finoman elrejtjük az eredeti helyét */
 .problem-card.is-open {
   opacity: 0;
   visibility: hidden;
 }
 
-/* ── INTERAKTÍV FELUGRÓ ABLAK (DIALOG) SZÍNVILÁGA ── */
+/* ── INTERAKTÍV FELUGRÓ ABLAK (DIALOG) FRISSÍTETT MODERNEBB DIZÁJN ── */
 #layout-dialog {
   border: none;
   background: transparent;
@@ -270,19 +268,18 @@ button.problem-card:hover .more-btn {
   transform: translate(-50%, -50%);
 }
 
-/* A háttér lágy sötétítése meleg sötétbarna tónussal és elmosással */
 #layout-dialog::backdrop {
   background: rgba(58, 53, 48, 0.45);
   backdrop-filter: blur(8px);
 }
 
-/* A klónozott kártya stílusa a meleg pezsgő-bézs felugró ablakban */
+/* A megnyíló lap stílusa - FEKETE KERET NÉLKÜL, HALVÁNY ARANYOS BEIGE HÁTTÉRREL */
 #layout-dialog .problem-card {
-  background: #fffaf5; 
+  background: #fff9f1; /* Gyönyörű halvány meleg beige háttér */
   padding: 55px 45px;
   border-radius: 24px;
-  border: 1px solid rgba(184, 151, 117, 0.25);
-  box-shadow: 0 30px 70px rgba(58, 53, 48, 0.2);
+  border: none; /* Teljesen eltávolítottuk a sötét/fekete szegélyt */
+  box-shadow: 0 30px 70px rgba(58, 53, 48, 0.18);
   cursor: default;
   transform: none; 
 }
@@ -311,7 +308,6 @@ button.problem-card:hover .more-btn {
   text-align: justify;
 }
 
-/* Lemondási feltétel kiemelése (finom bordós szín) */
 .cancellation-policy {
   font-size: 0.9rem !important;
   color: #a04040 !important; 
@@ -322,7 +318,6 @@ button.problem-card:hover .more-btn {
   text-align: left !important;
 }
 
-/* A belső időpontfoglaló gomb méretezése */
 #layout-dialog .btn-primary {
   display: inline-block;
   width: auto;

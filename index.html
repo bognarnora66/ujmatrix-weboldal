@@ -13,19 +13,8 @@
     
     <div class="nav-left-group">
       <a href="index.html" class="nav-logo">
-        <svg class="logo-svg" viewBox="0 0 170 50" width="170" height="50">
-          <g fill="none" stroke="#d6b28d" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="draw-line">
-            <path d="M 15 15 L 15 28 C 15 33, 23 33, 23 28 L 23 15 M 26 10 L 23 13 M 21 10 L 18 13" />
-            <path d="M 32 18 L 32 35 C 32 40, 26 40, 25 38 M 32 13 L 32 14" />
-            <path d="M 42 32 L 42 15 L 49 28 L 56 15 L 56 32" />
-            <path d="M 69 32 L 69 20 C 69 17, 61 17, 61 21 C 61 26, 69 25, 69 27 M 69 18 L 65 14" />
-            <path d="M 76 12 L 76 30 C 76 33, 79 33, 80 32 M 73 18 L 79 18" />
-            <path d="M 87 32 L 87 18 C 87 20, 93 19, 94 21" />
-            <path d="M 101 18 L 101 32 M 101 13 L 101 14" />
-            <path d="M 108 18 L 118 32 M 118 18 L 108 32" />
-            <path d="M 12 42 L 125 42" stroke-width="2" />
-          </g>
-        </svg>
+        <span class="nav-logo-text">ÚjMátrix</span>
+        <div class="logo-animated-line"></div>
       </a>
 
       <div class="nav-credentials">
@@ -162,16 +151,7 @@
   </footer>
 
   <script type="module">
-    import { createLayout, utils, animate, svg, stagger } from 'https://esm.sh/esm.sh/animejs';
-
-    // JAVÍTOTT LOGÓANIMÁCIÓ: Most már a teljes kollekciót (betűk + díszvonal) rajzolja szinkronban
-    animate(svg.createDrawable('.draw-line path'), {
-      draw: ['0 0', '0 1', '1 1'],
-      ease: 'inOutQuad',
-      duration: 3000,
-      delay: stagger(120),
-      loop: true
-    });
+    import { createLayout, utils } from 'https://esm.sh/animejs';
 
     const buttons = utils.$('.item');
     const $dialog = document.createElement('dialog');

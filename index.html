@@ -1,108 +1,224 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ÚjMátrix - Bognár Eleonóra, Légzésterapeuta">
-    <title>ÚjMátrix — Bognár Eleonóra | Légzésterapeuta</title>
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ÚjMátrix — Az Újmátrixban teljes vagy</title>
+  <meta name="description" content="Légzésterápia, coaching és stresszoldás Budapesten. Foglalj időpontot Bognár Eleonórához." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <nav id="navbar">
-        <div class="nav-brand">
-            <h1 class="logo-text">ÚJMÁTRIX</h1>
-            <span class="name">Bognár Eleonóra — Légzésterapeuta</span>
-            <a href="tel:+36302092338" class="phone">+36 30 209 2338</a>
+  <nav id="navbar">
+    
+    <div class="nav-left-group">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-svg" viewBox="0 0 170 50" width="170" height="50">
+          <g fill="none" stroke="#d6b28d" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="draw-line">
+            <path d="M 15 15 L 15 28 C 15 33, 23 33, 23 28 L 23 15 M 26 10 L 23 13 M 21 10 L 18 13" />
+            <path d="M 32 18 L 32 35 C 32 40, 26 40, 25 38 M 32 13 L 32 14" />
+            <path d="M 42 32 L 42 15 L 49 28 L 56 15 L 56 32" />
+            <path d="M 69 32 L 69 20 C 69 17, 61 17, 61 21 C 61 26, 69 25, 69 27 M 69 18 L 65 14" />
+            <path d="M 76 12 L 76 30 C 76 33, 79 33, 80 32 M 73 18 L 79 18" />
+            <path d="M 87 32 L 87 18 C 87 20, 93 19, 94 21" />
+            <path d="M 101 18 L 101 32 M 101 13 L 101 14" />
+            <path d="M 108 18 L 118 32 M 118 18 L 108 32" />
+            <path d="M 12 42 L 125 42" stroke-width="2" />
+          </g>
+        </svg>
+      </a>
+
+      <div class="nav-credentials">
+        <span class="nav-name">Bognár Eleonóra</span>
+        <span class="nav-title">Légzésterapeuta</span>
+        <a href="tel:+36302092338" class="nav-phone">+36 30 209 2338</a>
+      </div>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="rolam.html">Rólam</a></li>
+      <li><a href="betekintes.html">Betekintés</a></li>
+      <li><a href="media.html">Média</a></li>
+      <li><a href="ajandekutalvanyok.html">Ajándékutalvanyok</a></li>
+      <li><a href="kapcsolat.html" class="nav-cta">Kapcsolat</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-bg" role="img" aria-label="Nyugodt természeti háttér"></div>
+    <div class="hero-content">
+      <div class="hero-tagline">Légzésterápia · Coaching</div>
+      <h1>
+        <span class="hero-title-dark">Az Újmátrixban</span>
+        <span class="hero-title-gold">teljes vagy</span>
+      </h1>
+      <p class="hero-desc">
+        <span>Visszatalálni önmagadhoz a légzéseden keresztül.</span>
+        <span>Csendben, biztonságban, ítélet nélkül.</span>
+      </p>
+      <div class="hero-buttons">
+        <a href="kapcsolat.html" class="btn-primary">Kapcsolat</a>
+        <a href="betekintes.html" class="btn-ghost">Betekintés</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="problems">
+    <h2>Miben segíthetek?</h2>
+    <div class="problems-grid">
+      
+      <button class="item problem-card" data-duration="600">
+        <h3>Légzésterápia (transzlégzés)</h3>
+        <p class="card-meta">1 óra · 20 000 Ft</p>
+        <p class="short-desc">Nem igényel speciális tudást. Hatására olyan állapot alakul ki, amiben szabadon kapcsolódhatunk...</p>
+        <div class="full-details">
+          <p>A légzésterápia nem igényel speciális tudást, tanulást. Hatására egy olyan állapot alakul ki, amiben szabadon kapcsolódhatunk a bennünk lévő információkhoz. Általa megérthetjük, újra kalibrálhatjuk életünk történéseit.</p>
+          <p class="cancellation-policy">⚠️ <em>A 24 ill. 48 órás lemondásnak anyagi vonzata van! Kérlek, tiszteljük egymás idejét!</em></p>
+          <a href="https://ujmatrix.reservio.com/" target="_blank" rel="noopener" class="btn-primary">Időpontfoglalás</a>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html" class="active">Főoldal</a></li>
-            <li><a href="rolam.html">Rólam</a></li>
-            <li><a href="betekintes.html">Betekintés</a></li>
-            <li><a href="media.html">Média</a></li>
-            <li><a href="ajandekutalvanyok.html">Ajándékutalványok</a></li>
-            <li><a href="kapcsolat.html" class="cta">Kapcsolat</a></li>
+        <span class="more-btn">Részletek megtekintése →</span>
+      </button>
+
+      <button class="item problem-card" data-duration="600">
+        <h3>Coaching</h3>
+        <p class="card-meta">1 óra · 20 000 Ft</p>
+        <p class="short-desc">Egy személyre szabott tanácsadási módszer. Saját erődre támaszkodva segít egyedivé válnod...</p>
+        <div class="full-details">
+          <p>Egy személyre szabott tanácsadási módszer. Saját erődre támaszkodva segít egyedivé válnod. A folyamatos fejlődés és elhivatottság eredménye lesz sikered kulcsa.</p>
+          <p class="cancellation-policy">⚠️ <em>A 24 ill. 48 órás lemondásnak anyagi vonzata van! Kérlek, tiszteljük egymás idejét!</em></p>
+          <a href="https://ujmatrix.reservio.com/" target="_blank" rel="noopener" class="btn-primary">Időpontfoglalás</a>
+        </div>
+        <span class="more-btn">Részletek megtekintése →</span>
+      </button>
+
+      <button class="item problem-card" data-duration="600">
+        <h3>Stresszoldás</h3>
+        <p class="card-meta">1 óra · 20 000 Ft</p>
+        <p class="short-desc">A testi-lelki feszültség stresszt idéz elő. Gyengéd relaxációs technika hatására visszaáll...</p>
+        <div class="full-details">
+          <p>A testi - lelki feszültség stresszt idéz elő szervezetünkben. Ha nem tudunk kellőképpen töltődni, felborul az egyensúly. Gyengéd relaxációs technika hatására visszaáll a harmónia állapota.</p>
+          <p class="cancellation-policy">⚠️ <em>A 24 ill. 48 órás lemondásnak anyagi vonzata van! Kérlek, tiszteljük egymás idejét!</em></p>
+          <a href="https://ujmatrix.reservio.com/" target="_blank" rel="noopener" class="btn-primary">Időpontfoglalás</a>
+        </div>
+        <span class="more-btn">Részletek megtekintése →</span>
+      </button>
+
+    </div>
+  </section>
+
+  <section class="method">
+    <div class="method-img" role="img" aria-label="Csónak a vízen"></div>
+    <div class="method-text">
+      <span class="method-tagline">A MÓDSZER</span>
+      <h2>
+        <span class="method-title-gold">Transzlégzés</span>
+        <span class="method-title-sub">ahol a test megmutatja, mire van szüksége</span>
+      </h2>
+      <p>A légzésterápiában megtanulod, hogyan adj jelzést a tested idegrendszerének: most biztonságban vagy, most pihenhetsz. A módosult tudatállapotban felszínre kerülnek azok az érzések, amiket sokszor nem is tudsz szavakba önteni.</p>
+      <a href="betekintes.html" class="method-link">Olvass bele →</a>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <h2>Miért gyere el hozzám?</h2>
+    <div class="video-container">
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/zqt3E8OLfTI" title="Miért gyere el hozzám? - Bognár Eleonóra" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <span class="nav-logo-text">ÚjMátrix</span>
+        <p>Légzésterápia, coaching és belső csend — visszatalálni önmagadhoz.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menü</h4>
+        <ul>
+          <li><a href="index.html">Főoldal</a></li>
+          <li><a href="rolam.html">Rólam</a></li>
+          <li><a href="betekintes.html">Betekintés</a></li>
+          <li><a href="media.html">Média</a></li>
+          <li><a href="ajandekutalvanyok.html">Ajándékutalvanyok</a></li>
+          <li><a href="kapcsolat.html">Kapcsolat</a></li>
         </ul>
-    </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Kapcsolat</h4>
+        <address>
+          Bognár Eleonóra<br>
+          1073 Budapest, Erzsébet körút 58.<br>
+          <a href="tel:+36302092338" style="color: #ffffff;">+36 30 209 2338</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ÚjMátrix · Minden jog fenntartva</span>
+      <a href="https://m.me/bognareleonora" target="_blank" rel="noopener" class="messenger-btn">💬 Messenger</a>
+    </div>
+  </footer>
 
-    <header class="hero">
-        <div class="hero-bg"></div>
-    </header>
+  <script type="module">
+    import { createLayout, utils, animate, svg, stagger } from 'https://esm.sh/esm.sh/animejs';
 
-    <main class="main-content">
-        
-        <section id="problems" class="problems">
-            <div class="section-header">
-                <h2>Miben segíthetek?</h2>
-            </div>
-            <div class="problems-grid">
-                <div class="card" onclick="document.getElementById('modal1').showModal()">
-                    <h3>Légzésterápia</h3>
-                    <p>Ismerd meg a tudatos légzés erejét...</p>
-                </div>
-                <div class="card" onclick="document.getElementById('modal2').showModal()">
-                    <h3>Coaching</h3>
-                    <p>Utad önmagadhoz...</p>
-                </div>
-                <div class="card" onclick="document.getElementById('modal3').showModal()">
-                    <h3>Stresszoldás</h3>
-                    <p>Megnyugvás a mindennapokban...</p>
-                </div>
-            </div>
-        </section>
+    // JAVÍTOTT LOGÓANIMÁCIÓ: Most már a teljes kollekciót (betűk + díszvonal) rajzolja szinkronban
+    animate(svg.createDrawable('.draw-line path'), {
+      draw: ['0 0', '0 1', '1 1'],
+      ease: 'inOutQuad',
+      duration: 3000,
+      delay: stagger(120),
+      loop: true
+    });
 
-        <section class="method">
-            <div class="method-img"></div>
-            <div class="method-text">
-                <h2>A módszeremről</h2>
-                <p>Ez egy részletesebb szövegblokk a szakmai hátteremről és a módszerről.</p>
-                <p>Több bekezdés is elfér itt, hogy az oldal tartalmilag teljes legyen.</p>
-            </div>
-        </section>
+    const buttons = utils.$('.item');
+    const $dialog = document.createElement('dialog');
+    $dialog.id = 'layout-dialog';
+    document.body.appendChild($dialog);
 
-        <section class="video-section">
-            <div class="video-wrapper">
-                <iframe src="https://www.youtube.com/embed/példa" title="Bemutatkozó videó"></iframe>
-            </div>
-        </section>
-    </main>
+    const modalLayout = createLayout($dialog, {
+      children: ['.modal-card', 'h3', '.card-meta', 'p', '.full-details', '.more-btn'],
+      properties: ['--overlay-alpha'],
+    });
 
-    <dialog id="modal1">
-        <h3>Légzésterápia részletek</h3>
-        <p>Bővebb információk a terápiáról...</p>
-        <button onclick="document.getElementById('modal1').close()">Bezárás</button>
-    </dialog>
-    <dialog id="modal2">
-        <h3>Coaching részletek</h3>
-        <p>Bővebb információk a coaching folyamatról...</p>
-        <button onclick="document.getElementById('modal2').close()">Bezárás</button>
-    </dialog>
-    <dialog id="modal3">
-        <h3>Stresszoldás részletek</h3>
-        <p>Bővebb információk a stresszkezelésről...</p>
-        <button onclick="document.getElementById('modal3').close()">Bezárás</button>
-    </dialog>
+    const closeModal = (e) => {
+      if (e.target === $dialog || e.type === 'cancel') {
+        let $item;
+        modalLayout.update(({ root }) => {
+          $dialog.close();
+          $item = buttons.find(item => item.classList.contains('is-open'));
+          if ($item) {
+            $item.classList.remove('is-open');
+            $item.focus();
+          }
+        });
+      }
+    };
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>Elérhetőség</h4>
-                <p>Bognár Eleonóra</p>
-                <p>Tel: +36 30 209 2338</p>
-            </div>
-            <div class="footer-col">
-                <h4>Menü</h4>
-                <p>Főoldal | Rólam | Kapcsolat</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ÚjMátrix | Bognár Eleonóra | Minden jog fenntartva</p>
-        </div>
-    </footer>
+    const openModal = e => {
+      const $target = e.target;
+      const $item = $target.closest('.item');
+      if (!$item || $item.classList.contains('is-open')) return;
+
+      const $clone = $item.cloneNode(true);
+      $clone.className = 'modal-card'; 
+      $dialog.innerHTML = ''; 
+      $dialog.appendChild($clone); 
+
+      modalLayout.update(() => {
+        $dialog.showModal(); 
+        $item.classList.add('is-open'); 
+      }, {
+        duration: parseInt($item.dataset.duration) || 600
+      });
+    };
+
+    buttons.forEach($button => $button.addEventListener('click', openModal));
+    $dialog.addEventListener('cancel', closeModal);
+    $dialog.addEventListener('click', closeModal);
+  </script>
 
 </body>
 </html>

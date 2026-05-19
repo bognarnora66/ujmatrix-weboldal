@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ÚjMátrix — Az Újmátrixban teljes vagy</title>
-  <meta name="description" content="Légzésterápia, coaching és stresszoldás Budapesten. Foglalj időpontot Bognár Eleonórához." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -29,68 +28,15 @@
 
   <header class="hero">
     <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Az Újmátrixban teljes vagy</h1>
+      <p>Visszatalálni önmagadhoz a légzéseden keresztül.</p>
+      <div class="hero-buttons">
+        <a href="kapcsolat.html" class="btn-primary">Kapcsolat</a>
+        <a href="betekintes.html" class="btn-ghost">Betekintés</a>
+      </div>
+    </div>
   </header>
 
-  <section class="problems">
-    <h2>Miben segíthetek?</h2>
-    <div class="problems-grid">
-      <button class="item problem-card" data-duration="600">
-        <h3>Légzésterápia</h3>
-        <p class="short-desc">Transzlégzés és stresszoldás...</p>
-        <div class="full-details">Részletes leírás a légzésterápiáról...</div>
-      </button>
-      <button class="item problem-card" data-duration="600">
-        <h3>Coaching</h3>
-        <p class="short-desc">Személyre szabott fejlesztés...</p>
-        <div class="full-details">Részletes leírás a coachingról...</div>
-      </button>
-      <button class="item problem-card" data-duration="600">
-        <h3>Stresszoldás</h3>
-        <p class="short-desc">Testi-lelki harmónia...</p>
-        <div class="full-details">Részletes leírás a stresszoldásról...</div>
-      </button>
-    </div>
-  </section>
-
-  <section class="method">
-    <div class="method-img"></div>
-    <div class="method-text">
-      <h2>Transzlégzés</h2>
-      <p>A módszer, ahol a test megmutatja, mire van szüksége.</p>
-    </div>
-  </section>
-
-  <section class="video-section">
-    <h2>Miért gyere el hozzám?</h2>
-    <div class="video-wrapper">
-       <iframe src="https://www.youtube.com/embed/zqt3E8OLfTI" allowfullscreen></iframe>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-col"><h4>ÚjMátrix</h4></div>
-      <div class="footer-col"><h4>Menü</h4></div>
-      <div class="footer-col"><h4>Kapcsolat</h4></div>
-    </div>
-  </footer>
-
-  <script type="module">
-    import { createLayout, utils } from 'https://esm.sh/animejs';
-    const buttons = utils.$('.item');
-    const $dialog = document.createElement('dialog');
-    document.body.appendChild($dialog);
-
-    const openModal = e => {
-      const $item = e.target.closest('.item');
-      if (!$item) return;
-      $dialog.innerHTML = $item.innerHTML;
-      $dialog.showModal();
-    };
-    
-    buttons.forEach(b => b.addEventListener('click', openModal));
-    $dialog.addEventListener('click', () => $dialog.close());
-  </script>
-
-</body>
+  </body>
 </html>

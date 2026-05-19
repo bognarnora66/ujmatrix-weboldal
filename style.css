@@ -43,26 +43,37 @@ nav {
 .nav-links a.active { color: var(--gold-accent); font-weight: 600; border-bottom: 2px solid var(--gold-accent); }
 .nav-cta { background: var(--gold-accent); color: white !important; padding: 8px 20px; border-radius: 50px; }
 
-/* ── HERO SECTION (A kész háttérképpel) ── */
+/* ── HERO SECTION (FŐKÉP) ── */
 .hero {
-  position: relative;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
+  position: relative;
   overflow: hidden;
 }
 
 .hero-bg {
   width: 100%;
   height: 100%;
-  background: url('hero-bg.jpg') no-repeat center center/cover;
+  /* A fájlnév pontosan hero-bg.png legyen a GitHubon! */
+  background: url('hero-bg.png') no-repeat center center/cover;
 }
 
-/* ── SZOLGÁLTATÁSOK RÁCS (A MODALHOZ) ── */
+/* ── SZOLGÁLTATÁSOK RÁCS ── */
 .problems { padding: 100px 40px; text-align: center; background-color: var(--bg-creme); }
 .problems h2 { font-family: var(--font-serif); font-size: 2.8rem; margin-bottom: 50px; }
 .problems-grid { display: flex; gap: 30px; max-width: 1200px; margin: 0 auto; }
 .problem-card { background: white; padding: 40px; border-radius: 16px; border: 1px solid #eee; flex: 1; cursor: pointer; transition: 0.3s; }
 .problem-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+/* ── MÓDSZER SECTION ── */
+.method { display: flex; align-items: center; padding: 100px 40px; background-color: white; }
+.method-img { flex: 1; min-height: 400px; background: #f0f0f0; }
+.method-text { flex: 1; padding-left: 60px; }
+
+/* ── VIDEÓ ── */
+.video-section { padding: 100px 40px; text-align: center; }
+.video-wrapper { max-width: 800px; margin: 0 auto; aspect-ratio: 16/9; }
+.video-wrapper iframe { width: 100%; height: 100%; border: none; }
 
 /* ── LÁBLÉC ── */
 footer { background: #3a3530; color: white; padding: 60px 40px; text-align: center; }

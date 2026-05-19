@@ -1,5 +1,5 @@
 /* ── BETŰTÍPUS BEÁGYAZÁSA ── */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 :root {
   --bg-creme: #fdfbf7;       
@@ -26,7 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── NAVIGÁCIÓ (KÖZELEBB HOZOTT CSOPORTOSÍTÁS) ── */
+/* ── NAVIGÁCIÓ ELEMEI ── */
 nav {
   position: fixed;
   top: 0;
@@ -34,32 +34,59 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 40px; 
+  padding: 18px 40px; 
   z-index: 1000;
   background: rgba(253, 251, 247, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(184, 151, 117, 0.1);
 }
 
-/* Összefogja a logót és a névjegyet a bal oldalon */
 .nav-left-group {
   display: flex;
   align-items: center;
-  gap: 50px; /* JAVÍTOTT: 50px távolságra hozza egymáshoz a logót és a nevet */
+  gap: 35px; /* Elegáns térköz a vadiúj logó és a névjegy között */
 }
 
-.logo-svg {
+/* JAVÍTOTT: Az új prémium logókonténer (Ikon + Nagybetűs Szöveg) */
+.nav-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Távolság az ikon és a felirat között */
+  text-decoration: none;
+  animation: logoFadeIn 1.5s ease-out forwards; /* Elegáns belépő animáció */
+}
+
+.logo-icon-svg {
   display: block;
-  overflow: visible;
+  transition: transform 0.4s ease;
+}
+
+.nav-logo-container:hover .logo-icon-svg {
+  transform: rotate(15px) scale(1.05); /* Finom interakció, ha ráviszik az egeret */
+}
+
+/* JAVÍTOTT: NAGYBETŰS, VASTAGABB, RAGYOGÓ ARANY LOGÓ FELIRAT */
+.nav-logo-text-new {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 700;           /* Határozottan vastagabb betűs */
+  color: #d6b28d;             /* Fényes, ragyogó arany szín */
+  letter-spacing: 2.5px;      /* Elegáns nagybetűs térközök */
+  line-height: 1;
+}
+
+@keyframes logoFadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* KÖZÉPSŐ BLOKK: Bognár Eleonóra névjegye */
 .nav-credentials {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Balra igazítva a logó mellett */
+  align-items: flex-start;
   text-align: left;
-  gap: 2px;
+  gap: 1px;
 }
 
 .nav-name {
@@ -84,11 +111,6 @@ nav {
   color: var(--text-muted);
   text-decoration: none;
   letter-spacing: 0.5px;
-  transition: color 0.3s;
-}
-
-.nav-phone:hover {
-  color: var(--gold-accent);
 }
 
 /* JOBB OLDAL: Menüpontok */

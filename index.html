@@ -11,17 +11,28 @@
 
   <nav id="navbar">
     
-    <a href="index.html" class="nav-logo">
-      <svg class="logo-svg" viewBox="0 0 160 45" width="160" height="45">
-        <text x="10" y="28" class="logo-text">ÚjMátrix</text>
-        <path class="line" d="M 10 38 L 140 38" stroke="#d6b28d" stroke-width="2" fill="none" />
-      </svg>
-    </a>
+    <div class="nav-left-group">
+      <a href="index.html" class="nav-logo">
+        <svg class="logo-svg" viewBox="0 0 170 50" width="170" height="50">
+          <g fill="none" stroke="#d6b28d" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" class="draw-line">
+            <path d="M 15 15 L 15 28 C 15 33, 23 33, 23 28 L 23 15 M 26 10 L 23 13 M 21 10 L 18 13" />
+            <path d="M 32 18 L 32 35 C 32 40, 26 40, 25 38 M 32 13 L 32 14" />
+            <path d="M 42 32 L 42 15 L 49 28 L 56 15 L 56 32" />
+            <path d="M 69 32 L 69 20 C 69 17, 61 17, 61 21 C 61 26, 69 25, 69 27 M 69 18 L 65 14" />
+            <path d="M 76 12 L 76 30 C 76 33, 79 33, 80 32 M 73 18 L 79 18" />
+            <path d="M 87 32 L 87 18 C 87 20, 93 19, 94 21" />
+            <path d="M 101 18 L 101 32 M 101 13 L 101 14" />
+            <path d="M 108 18 L 118 32 M 118 18 L 108 32" />
+            <path d="M 12 42 L 125 42" stroke-width="2" />
+          </g>
+        </svg>
+      </a>
 
-    <div class="nav-credentials">
-      <span class="nav-name">Bognár Eleonóra</span>
-      <span class="nav-title">Légzésterapeuta</span>
-      <a href="tel:+36302092338" class="nav-phone">+36 30 209 2338</a>
+      <div class="nav-credentials">
+        <span class="nav-name">Bognár Eleonóra</span>
+        <span class="nav-title">Légzésterapeuta</span>
+        <a href="tel:+36302092338" class="nav-phone">+36 30 209 2338</a>
+      </div>
     </div>
 
     <ul class="nav-links" id="nav-links">
@@ -151,18 +162,17 @@
   </footer>
 
   <script type="module">
-    import { createLayout, utils, animate, svg, stagger } from 'https://esm.sh/animejs';
+    import { createLayout, utils, animate, svg, stagger } from 'https://esm.sh/esm.sh/animejs';
 
-    // 1. AZ UTOLJÁRA KÜLDÖTT LOGÓVONAL-RAJZOLÓ ANIMÁCIÓD
-    animate(svg.createDrawable('.line'), {
+    // JAVÍTOTT LOGÓANIMÁCIÓ: Most már a teljes kollekciót (betűk + díszvonal) rajzolja szinkronban
+    animate(svg.createDrawable('.draw-line path'), {
       draw: ['0 0', '0 1', '1 1'],
       ease: 'inOutQuad',
-      duration: 2500,
-      delay: stagger(100),
+      duration: 3000,
+      delay: stagger(120),
       loop: true
     });
 
-    // 2. SZOLGÁLTATÁS KÁRTYÁK ANIMÁCIÓJA (FLIP ELEM)
     const buttons = utils.$('.item');
     const $dialog = document.createElement('dialog');
     $dialog.id = 'layout-dialog';

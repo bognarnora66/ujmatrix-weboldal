@@ -1,37 +1,91 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ÚjMátrix — Az Újmátrixban teljes vagy</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ÚjMátrix — Bognár Eleonóra | Légzésterapeuta</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <nav id="navbar">
-    <div class="nav-credentials">
-      <span class="nav-name">Bognár Eleonóra</span>
-      <span class="nav-title">Légzésterapeuta</span>
-      <a href="tel:+36302092338" class="nav-phone">+36 30 209 2338</a>
-    </div>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Főoldal</a></li>
-      <li><a href="rolam.html">Rólam</a></li>
-      <li><a href="betekintes.html">Betekintés</a></li>
-      <li><a href="media.html">Média</a></li>
-      <li><a href="ajandekutalvanyok.html">Ajándékutalvanyok</a></li>
-      <li><a href="kapcsolat.html" class="nav-cta">Kapcsolat</a></li>
-    </ul>
-  </nav>
+    <nav id="navbar">
+        <div class="nav-brand">
+            <span class="name">Bognár Eleonóra</span>
+            <span class="title">Légzésterapeuta</span>
+            <a href="tel:+36302092338" class="phone">+36 30 209 2338</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Főoldal</a></li>
+            <li><a href="rolam.html">Rólam</a></li>
+            <li><a href="betekintes.html">Betekintés</a></li>
+            <li><a href="media.html">Média</a></li>
+            <li><a href="ajandekutalvanyok.html">Ajándékutalványok</a></li>
+            <li><a href="kapcsolat.html" class="cta">Kapcsolat</a></li>
+        </ul>
+    </nav>
 
-  <header class="hero">
-    <div class="hero-bg"></div>
-  </header>
+    <header class="hero">
+        <div class="hero-bg"></div>
+    </header>
 
-  <main class="content">
-    <h2>Miben segíthetek?</h2>
-    <div class="spacer-box">Ide kerülnek a további tartalmaid...</div>
-  </main>
+    <main class="main-content">
+        <section id="problems" class="problems">
+            <h2>Miben segíthetek?</h2>
+            <div class="problems-grid">
+                <div class="problem-card" onclick="document.getElementById('modal1').showModal()">
+                    <h3>Légzésterápia</h3>
+                    <p class="short-desc">Kattints a részletekért...</p>
+                </div>
+                <div class="problem-card" onclick="document.getElementById('modal2').showModal()">
+                    <h3>Coaching</h3>
+                    <p class="short-desc">Kattints a részletekért...</p>
+                </div>
+                <div class="problem-card" onclick="document.getElementById('modal3').showModal()">
+                    <h3>Stresszoldás</h3>
+                    <p class="short-desc">Kattints a részletekért...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="method">
+            <div class="method-img"></div>
+            <div class="method-text">
+                <h2>A módszeremről</h2>
+                <p>Hosszú szöveges tartalom a terápiás folyamatról, ami biztosítja az oldal megfelelő hosszát és a felhasználói élményt.</p>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/példa" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <dialog id="modal1"><h3>Légzésterápia részletek</h3><button onclick="document.getElementById('modal1').close()">Bezárás</button></dialog>
+    <dialog id="modal2"><h3>Coaching részletek</h3><button onclick="document.getElementById('modal2').close()">Bezárás</button></dialog>
+    <dialog id="modal3"><h3>Stresszoldás részletek</h3><button onclick="document.getElementById('modal3').close()">Bezárás</button></dialog>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Elérhetőség</h4>
+                <p>Email: info@ujmatrix.hu</p>
+            </div>
+            <div class="footer-col">
+                <h4>Közösségi média</h4>
+                <p>Facebook / Instagram</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ÚjMátrix | Bognár Eleonóra | Minden jog fenntartva</p>
+        </div>
+    </footer>
 
 </body>
 </html>

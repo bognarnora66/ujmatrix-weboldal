@@ -72,15 +72,17 @@ nav {
   font-weight: 500;
 }
 
-/* ── HERO SECTION ── */
+/* ── HERO SECTION FRISSÍTÉSEK (SZÖVEG LEJJEBB TOLÁSA ÉS ARANY KIEMELÉS) ── */
 .hero {
   position: relative;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;    /* JAVÍTOTT: Az oldal aljára/közepére igazítja a dobozt */
   justify-content: center; 
   text-align: center;      
-  padding: 0 20px;
+  padding-bottom: 12vh;     /* JAVÍTOTT: Pontosan a földgömb sötétebb ívére pozicionálja */
+  padding-left: 20px;
+  padding-right: 20px;
   color: #ffffff;
 }
 
@@ -90,37 +92,60 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('hero-bg.png') no-repeat center center/cover;
+  background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.25)), url('hero-bg.png') no-repeat center center/cover;
   z-index: -1;
 }
 
 .hero-content {
-  max-width: 750px;
+  max-width: 800px;
 }
 
 .hero-tagline {
   font-size: 1.1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
 .hero-content h1 {
+  display: flex;
+  flex-direction: column;   /* Külön sorba teszi a két részt */
+  gap: 5px;
   font-family: var(--font-serif);
-  font-size: 4.2rem;
+  font-size: 4.4rem;
   font-weight: 400;
-  line-height: 1.2;
-  margin-bottom: 25px;
+  line-height: 1.15;
+  margin-bottom: 30px;
+}
+
+.hero-title-dark {
+  color: #ffffff;
+  text-shadow: 0 2px 15px rgba(0,0,0,0.4);
+}
+
+/* JAVÍTOTT: A „teljes vagy” kifejezett arany színe */
+.hero-title-gold {
+  color: var(--gold-accent);
   text-shadow: 0 2px 15px rgba(0,0,0,0.3);
 }
 
-.hero-content p {
+/* JAVÍTOTT: Kétsoros, elegáns, jól olvasható leírás */
+.hero-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   font-size: 1.25rem;
   font-weight: 300;
-  margin-bottom: 40px;
+  margin-bottom: 45px;
   letter-spacing: 0.5px;
-  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  line-height: 1.5;
+}
+
+.hero-desc span {
+  display: block;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Finom sötét árnyék a tökéletes olvashatóságért */
 }
 
 .hero-buttons {
@@ -157,6 +182,8 @@ nav {
   font-weight: 500;
   letter-spacing: 1px;
   transition: all 0.3s;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+  backdrop-filter: blur(3px);
 }
 
 /* ── SZOLGÁLTATÁSOK RÁCS ── */
@@ -328,7 +355,7 @@ button.problem-card:hover .more-btn {
   margin: 0 auto;
 }
 
-/* ── MÓDSZER SECTION FRISSÍTÉSEK ── */
+/* ── MÓDSZER SECTION ── */
 .method {
   display: flex;
   min-height: 600px;
@@ -349,39 +376,36 @@ button.problem-card:hover .more-btn {
   justify-content: center;
 }
 
-/* JAVÍTOTT: A MÓDSZER szó nagyobb, vastagabb, sokkal jobban olvasható */
 .method-tagline {
   color: var(--gold-accent);
   font-family: var(--font-sans);
-  font-size: 1.1rem;      /* Megnövelt méret */
-  font-weight: 600;       /* Súlyosabb, vastagabb betű */
-  letter-spacing: 4px;    /* Szellősebb betűközök */
+  font-size: 1.1rem;      
+  font-weight: 600;       
+  letter-spacing: 4px;    
   text-transform: uppercase;
-  margin-bottom: 25px;    /* Nagyobb térköz alatta */
+  margin-bottom: 25px;    
   display: block;
 }
 
 .method-text h2 {
   display: flex;
-  flex-direction: column; /* Egymás alá rendezi a két sort */
-  gap: 10px;              /* Távolság a két sor között */
+  flex-direction: column; 
+  gap: 10px;              
   line-height: 1.2;
   margin-bottom: 30px;
 }
 
-/* JAVÍTOTT: Első sor - Transzlégzés arany színben */
 .method-title-gold {
   font-family: var(--font-serif);
   font-size: 2.8rem;
   font-weight: 400;
-  color: var(--gold-accent); /* Megegyezik a gomb színével */
+  color: var(--gold-accent); 
 }
 
-/* JAVÍTOTT: Második sor - Kisebb betűmérettel, eredeti sötét színnel */
 .method-title-sub {
   font-family: var(--font-serif);
-  font-size: 1.9rem;      /* Kisebb betűméret */
-  color: var(--text-dark); /* Jelenlegi sötét szín */
+  font-size: 1.9rem;      
+  color: var(--text-dark); 
   font-weight: 400;
 }
 

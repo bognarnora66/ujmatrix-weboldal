@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ÚjMátrix — Az Újmátrixban teljes vagy</title>
+  <meta name="description" content="Légzésterápia, coaching és stresszoldás Budapesten." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -30,7 +31,10 @@
     <div class="hero-bg"></div>
     <div class="hero-content">
       <div class="hero-tagline">Légzésterápia · Coaching</div>
-      <h1><span>Az Újmátrixban</span> <span>teljes vagy</span></h1>
+      <h1>
+        <span class="hero-title-dark">Az Újmátrixban</span><br>
+        <span class="hero-title-gold">teljes vagy</span>
+      </h1>
       <p class="hero-desc">Visszatalálni önmagadhoz a légzéseden keresztül.</p>
       
       <div class="hero-logo-box">
@@ -44,5 +48,44 @@
     </div>
   </header>
 
-  </body>
+  <section class="problems">
+    <h2>Miben segíthetek?</h2>
+    <div class="problems-grid">
+      <button class="item problem-card" data-duration="600"><h3>Légzésterápia</h3></button>
+      <button class="item problem-card" data-duration="600"><h3>Coaching</h3></button>
+      <button class="item problem-card" data-duration="600"><h3>Stresszoldás</h3></button>
+    </div>
+  </section>
+
+  <section class="method">
+    <div class="method-img"></div>
+    <div class="method-text">
+      <h2>Transzlégzés</h2>
+      <p>A módszer, ahol a test megmutatja, mire van szüksége.</p>
+    </div>
+  </section>
+
+  <section class="video-section">
+    <div class="video-wrapper">
+       <iframe src="https://www.youtube.com/embed/zqt3E8OLfTI" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col"><h4>ÚjMátrix</h4></div>
+      <div class="footer-col"><h4>Menü</h4></div>
+      <div class="footer-col"><h4>Kapcsolat</h4></div>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { createLayout, utils } from 'https://esm.sh/animejs';
+    const buttons = utils.$('.item');
+    const $dialog = document.createElement('dialog');
+    document.body.appendChild($dialog);
+    // ... a részletes modal logikát a korábbi teljes kódodból tudod visszamásolni ide
+  </script>
+
+</body>
 </html>

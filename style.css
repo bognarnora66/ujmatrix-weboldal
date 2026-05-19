@@ -26,7 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── NAVIGÁCIÓ ── */
+/* ── NAVIGÁCIÓ (HÁROMOSZTATÚ ÚJ PRÉMIUM ELRENDEZÉS) ── */
 nav {
   position: fixed;
   top: 0;
@@ -34,32 +34,77 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 50px;
+  padding: 15px 40px; /* Kicsit áramvonalasabb padding az extra adatok miatt */
   z-index: 1000;
-  background: rgba(253, 251, 247, 0.9);
+  background: rgba(253, 251, 247, 0.95);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(184, 151, 117, 0.1);
 }
 
-.nav-logo-text {
+/* BAL OLDAL: Az új SVG logó formázása */
+.logo-svg {
+  display: block;
+  overflow: visible;
+}
+
+.logo-text {
   font-family: var(--font-serif);
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--text-dark);
+  fill: var(--text-dark);
   letter-spacing: 1px;
 }
 
+/* KÖZÉPSŐ BLOKK: Bognár Eleonóra Névjegy stílusai */
+.nav-credentials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2px;
+}
+
+.nav-name {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.nav-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold-accent);
+  font-weight: 500;
+}
+
+.nav-phone {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+.nav-phone:hover {
+  color: var(--gold-accent);
+}
+
+/* JOBB OLDAL: Menüpontok */
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 30px;
+  gap: 25px;
   align-items: center;
 }
 
 .nav-links a {
   text-decoration: none;
   color: var(--text-dark);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 400;
   letter-spacing: 1px;
 }
@@ -67,12 +112,12 @@ nav {
 .nav-cta {
   background: var(--gold-accent) !important;
   color: #ffffff !important;
-  padding: 10px 22px;
+  padding: 8px 20px;
   border-radius: 50px;
   font-weight: 500;
 }
 
-/* ── HERO SECTION FRISSÍTÉSEK (VILÁGOSABB, RAGYOGÓBB ARANY) ── */
+/* ── HERO SECTION ── */
 .hero {
   position: relative;
   height: 100vh;
@@ -125,7 +170,6 @@ nav {
   text-shadow: 0 2px 15px rgba(0,0,0,0.4);
 }
 
-/* JAVÍTOTT: Világosabb, pezsgőbb arany a tökéletes láthatóságért a sötétebb háttéren */
 .hero-title-gold {
   color: #d6b28d; 
   text-shadow: 0 2px 15px rgba(0,0,0,0.4);
